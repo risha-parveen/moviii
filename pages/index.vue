@@ -39,6 +39,7 @@ export default {
           background-color:$pink;
           font-size:1.2rem;
           color:white;
+          cursor: pointer;
 
           &:hover{
             transform:scale(1.05);
