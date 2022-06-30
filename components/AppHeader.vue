@@ -11,16 +11,15 @@ export default {
 </script>
 
 <style scoped lang="scss">
-
-  $primary:#201B1D;
-  $color:#B25656;
-
+  @import '@/assets/scss/_shared.scss';
   header{
-    background-color:#201B1D;
-    border-color:1px solid #3B7D75;
+    background-color:$bgcolor;
+    border-bottom:0.2px solid $dark-green;
+    border-image:linear-gradient(45deg,$dark-green, $pink);
+    border-image-slice: 0.5;
 
     img{
-      margin:10px 60px;
+      margin:20px 30px 0px 60px;
     }
   }
 </style>
