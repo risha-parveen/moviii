@@ -13,15 +13,9 @@ export default {
 }
 </script>
 
-<style lang="scss">
-  $primary:#201B1D;
-  $color:#B25656;
-  $dark-color:#a13838;
-  
-  html,.root,.body,.container{
-    background-color:$primary;
-  }
+<style lang="scss" scoped>
 
+  @import '@/assets/scss/_shared.scss';
   .container{
     margin-top:250px;
     text-align: center;
@@ -42,13 +36,13 @@ export default {
           border:none;
           padding:10px 15px;
           transition:0.4s ease;
-          background-color:$color;
+          background-color:$pink;
           font-size:1.2rem;
           color:white;
 
           &:hover{
             transform:scale(1.05);
-            background-color:darken($color,10);
+            background-color:darken($pink,10);
           }
         }
       } 
