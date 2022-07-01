@@ -45,10 +45,11 @@ export default {
       cursor: pointer;
       font-family:$font;
       font-size:1.2rem;
+      font-weight:300;
       margin-right:15px;
       position:relative;
       top:-22px;
-      transition:0.3s ease;
+      transition:0.5s ease;
 
       &:hover{
         color:lighten($pink,20);

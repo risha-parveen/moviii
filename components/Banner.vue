@@ -1,8 +1,4 @@
 <template>
-  <div class="layout-container">
-    <AppHeader/>
-    <Nuxt/>
-  </div>
   
 </template>
 
