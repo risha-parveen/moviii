@@ -33,7 +33,7 @@ export default {
   }
 
   .banner-container{
-    background-color:gray;
+    background-color:rgb(102, 100, 100);
     margin:50px 100px 20px 100px;
     height:170px;
     max-width: 1500px;
@@ -51,7 +51,6 @@ export default {
   .all-container{
     min-width: 80%;
     min-height:300px;
-    background-color:black;
   }
 
 </style>
