@@ -1,6 +1,6 @@
 <template>
   <div class="banner">
-    <img src="spidey.jpg" alt="banner-image">
+    <img src="spidey.jpg" class="image"/>
     <button>Watch Now</button>
   </div>
 </template>
@@ -17,14 +17,22 @@ export default {
     width:100%;
     height: 100%;
     background-color:white;
-    overflow:hidden;
+    border-radius: 20px;;
     display:inline-block;
-    border-radius: 15px;
+    position:relative;
 
-    img{
+    .image{
       width:100%;
-      object-fit:contain;
-      object-position: left bottom;
+      height:100%;
+      object-fit: cover;
+      object-position:center 60%;
+      border-radius: 20px;;
+      mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%,rgba(0, 0, 0, 0.356) 100%);
+      transition: 0.4s ease;
+
+      &:hover{
+        mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%,rgba(0, 0, 0, 0.514) 100%);
+      }
     }
 
     button{
@@ -36,8 +44,9 @@ export default {
       font-size: 1.1rem;
       cursor: pointer;
 
-      position: relative;
-      top:calc(100% - 60px);
+      position: absolute;
+      z-index:9;
+      top:110px;
       left:20px;
 
       &:hover{

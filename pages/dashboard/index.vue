@@ -33,12 +33,10 @@ export default {
   }
 
   .banner-container{
-    background-color:rgb(102, 100, 100);
     margin:50px 100px 20px 100px;
     height:170px;
     max-width: 1500px;
     min-width:75%;
-    border-radius: 20px;
   }
 
   .trending-container{
