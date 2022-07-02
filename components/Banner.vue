@@ -1,13 +1,27 @@
 <template>
-  <div class="banner">
-    <img src="spidey.jpg" class="image"/>
+  <div class="banner" @mouseover="showTag" @mouseleave="hideTag">
+    <img src="https://www.comingsoon.net/assets/uploads/2012/05/file_90733_0_tdkrnewbannerlarge1.jpg" class="image"/>
     <button>Watch Now</button>
+    <p class="movie-tag" v-if="this.tag">The Dark Knight Rises</p>
   </div>
 </template>
 
 <script>
 export default {
+  data(){
+    return{
+      tag:false
+    }
+  },
 
+  methods:{
+    showTag(){
+      this.tag=true;
+    },
+    hideTag(){
+      this.tag=false;
+    }
+  }
 }
 </script>
 
@@ -16,7 +30,7 @@ export default {
   .banner{
     width:100%;
     height: 100%;
-    background-color:white;
+    background-color:rgb(0, 0, 0);
     border-radius: 20px;;
     display:inline-block;
     position:relative;
@@ -25,16 +39,18 @@ export default {
       width:100%;
       height:100%;
       object-fit: cover;
-      object-position:center 60%;
+      object-position:center;
       border-radius: 20px;;
-      mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%,rgba(0, 0, 0, 0.356) 100%);
+      mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%,rgba(0, 0, 0, 0.459) 100%);
       transition: 0.4s ease;
+        &:hover{
+          mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%,rgba(0, 0, 0, 0.212) 100%);
 
-      &:hover{
-        mask-image: linear-gradient(to bottom, rgb(0, 0, 0) 0%,rgba(0, 0, 0, 0.514) 100%);
-      }
+        }
+      
     }
-
+    
+    
     button{
       padding:10px 20px;
       background-color: $pink;
@@ -53,6 +69,17 @@ export default {
         transform: scale(1.02);
         background-color:darken($pink,10);
       }
+    }
+
+    .movie-tag{
+      font-size:1.3rem;
+      font-family: $font;
+      font-weight: 500;
+      position:absolute;
+      top:100px;
+      left:170px;
+      color:$gray;
+      cursor:default;
     }
   }
 </style>
