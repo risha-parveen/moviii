@@ -41,6 +41,8 @@ export default {
 
   .trending-container{
     min-width:80%;
+    margin-left:10%;
+    margin-right:10%;
     height:250px;
     border:2px solid $dark-green;
     border-radius: 15px;

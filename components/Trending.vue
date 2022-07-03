@@ -1,14 +1,16 @@
 <template>
-  <div class="trending">
+  <div class="main-trending">
     <p>Trending Shows</p>
-    <div class="show-container">
-      <div class="trending-show"></div>
-      <div class="trending-show"></div>
-      <div class="trending-show"></div>
-      <div class="trending-show"></div>
-      <div class="trending-show"></div>
-      <div class="trending-show"></div>
-      <div class="trending-show"></div>
+    <div class="trending">
+      <div class="show-container">
+        <div class="trending-show"></div>
+        <div class="trending-show"></div>
+        <div class="trending-show"></div>
+        <div class="trending-show"></div>
+        <div class="trending-show"></div>
+        <div class="trending-show"></div>
+        <div class="trending-show"></div>
+      </div>
     </div>
   </div>
 </template>
@@ -22,35 +24,33 @@ export default {
 <style scoped lang="scss">
 @import '@/assets/scss/_shared.scss';
 
-.trending{
-  width:100%;
-  height:100%;
-}
+  .main-trending{
+    font-family: $font;   
+      
+    p{
+      color:white;
+      padding:0px 30px;
+      font-size:1.2rem;
+    }
+    .trending{
+      overflow-x:auto;
+      margin:10px;
 
-p{
-  padding:15px 30px;
-  margin:0;
-  font-family:$font;
-  color:$gray;
-}
-
-.show-container{
-  //width:calc(100% - 40px);
-  max-width:730px;
-  height:190px;
-  padding:0;
-  margin:0 20px;
-  
-  display:flex;
-  overflow-x:auto;
-
-  .trending-show{
-    height:170px;
-    min-width:270px;
-    background-color:black;
-    border-radius: 15px;;
-    margin-right:20px;
+      .show-container{
+        height:170px;
+        width:700px;
+        display:flex;
+        
+        .trending-show{
+          background-color:black;
+          height:100%;
+          width:260px;
+          margin-inline: 20px;
+          flex-shrink: 0;
+          border-radius: 10px;;
+        }
+      }  
+    }
+    
   }
-}
-
 </style>
