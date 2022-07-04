@@ -33,7 +33,7 @@ export default {
 .all-shows{
   width:100%;
   height:100%;
-  padding:10px;
+  margin-top:30px;
 
   p{
     font-family: $font;
@@ -60,18 +60,26 @@ export default {
         object-fit: cover;
         object-position:center;
         border-radius: 5px;;
+
       }
 
       .show-board{
         position:relative;
-        bottom:81px;
+        bottom: 62px;
         width:100%;
         height:60px;
+        margin:0;
         box-shadow: 0 0 1rem 0 rgba(0, 0, 0, .2); 
         border-radius:10px 10px 5px 5px;
         background-color: rgba(255, 255, 255, .15);        
         backdrop-filter: blur(15px);
-        
+
+        p{
+          font-weight: bold;
+          padding:10px;
+          margin:0;
+        }
+
       }
 
       &:hover{

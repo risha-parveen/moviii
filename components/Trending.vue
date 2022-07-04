@@ -35,7 +35,7 @@ export default {
       
     p{
       color:white;
-      padding:0px 30px;
+      padding:0px 55px;
       font-size:1.2rem;
     }
     .trending{

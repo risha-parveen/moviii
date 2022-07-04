@@ -8,6 +8,7 @@
       <div class="trending-container">
         <Trending/>
       </div>
+      <div class="line"></div>
       <div class="all-container">
         <AllShows/>
       </div>
@@ -46,6 +47,13 @@ export default {
     height:265px;
     border:3px solid $dark-green;
     border-radius: 15px;
+  }
+
+  .line{
+    margin-top:30px;
+    height:0.5px;
+    width:100%;
+    background-color:gray;
   }
 
   .all-container{
