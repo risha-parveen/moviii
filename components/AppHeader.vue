@@ -45,7 +45,7 @@ export default {
       cursor: pointer;
       font-family:$font;
       font-size:1.2rem;
-      font-weight:300;
+      font-weight:400;
       margin-right:15px;
       position:relative;
       top:-22px;
