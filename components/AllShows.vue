@@ -14,16 +14,19 @@
 
 <script>
 export default {
+  async fetch() {
+    let page_no=this.$route.query.page
+    console.log(page_no)
+    this.shows = await fetch(`
+    https://api.themoviedb.org/3/discover/movie?api_key=0dd92ad96e0c4b9992f976096e327fb2&sort_by=popularity.desc&inwith_watch_monetization_types=flatrate&page=${page_no}`
+    ).then((res)=>res.json())
+  },
   data(){
-    return {
+    return{
       shows:[]
     }
   },
-  async created(){
-    const res = await fetch(`https://api.themoviedb.org/3/discover/movie?api_key=0dd92ad96e0c4b9992f976096e327fb2&with_genres=878&include_adult=true`)
-    
-    this.shows=await res.json()
-  }
+  
 }
 </script>
 
@@ -50,7 +53,7 @@ export default {
     grid-template-columns: repeat(auto-fit,minmax(300px,1fr));
 
     .show{
-      max-height: 200px;
+      max-height: 230px;
       background-color:black;
       border-radius: 5px;
 
@@ -58,7 +61,7 @@ export default {
         width:100%;
         height:100%;
         object-fit: cover;
-        object-position:center;
+        object-position:center 40%;
         border-radius: 5px;;
 
       }
