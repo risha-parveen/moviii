@@ -22,16 +22,20 @@ export default {
         {name:'4'},
         {name:'5'},
       ],
-      active:'',
+      active:'1',
     }
   },
   methods:{
     buttonClick(btn_number){
       this.active=btn_number
       this.$router.push({path:'/dashboard',query:{page:`${btn_number}`}});
-      this.$nuxt.refresh()
     }
   },
+  watch:{
+    '$route.query'(){
+      this.$nuxt.refresh()
+    }
+  }
 }
 </script>
 
@@ -52,10 +56,14 @@ export default {
       color:black;
       font-size:1.1rem;
       border:1px solid black;
+      border-radius: 3px;
+      margin:3px;
     }
 
     .clicked{
-      background-color: red;
+      background-color:rgb(99, 89, 89);
+      color:white;
+      font-weight: bold;
     }
   }
 }

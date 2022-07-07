@@ -1,5 +1,5 @@
 <template>
-  <div class="all-shows">
+  <div class="all-shows" >
     <p>All Shows</p>
     <div class="show-container">
       <div class="show" v-for="show in this.shows.results" :key="show.id">
@@ -14,16 +14,24 @@
 
 <script>
 export default {
+  props:{
+    category:{
+      type:String,
+      default:'discover/movie'
+    }
+  },
   async fetch() {
-    let page_no=this.$route.query.page
-    console.log(page_no)
+    this.page_no=this.$route.query.page
+    console.log('hello')
     this.shows = await fetch(`
-    https://api.themoviedb.org/3/discover/movie?api_key=0dd92ad96e0c4b9992f976096e327fb2&sort_by=popularity.desc&inwith_watch_monetization_types=flatrate&page=${page_no}`
+    https://api.themoviedb.org/3/discover/movie?api_key=0dd92ad96e0c4b9992f976096e327fb2&sort_by=popularity.desc&inwith_watch_monetization_types=flatrate&page=${this.page_no}`
     ).then((res)=>res.json())
   },
   data(){
     return{
-      shows:[]
+      shows:[],
+      page_no:'',
+      current_path:''
     }
   },
   

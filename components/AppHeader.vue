@@ -3,10 +3,10 @@
     <div class="header-container">
       <img src="/moviii_logo.png" alt="moviii logo" width="200px">
       <div class="category-container">
-        <span >Movies</span>
-        <span>TV Shows</span>
-        <span>Animation</span>
-        <span>Trending</span>
+        <span @click="categoryClicked('movies')">Movies</span>
+        <span @click="categoryClicked('tv')">TV Shows</span>
+        <span @click="categoryClicked('animation')">Animation</span>
+        <span @click="categoryClicked('trending')">Trending</span>
       </div>
       <div class="account-container">
         <fa :icon="['fas','house']" class="icon-class"/>
@@ -20,7 +20,17 @@
 
 <script>
 export default {
-
+  data(){
+    return{
+      
+    }
+  },
+  methods:{
+    categoryClicked(current){
+      this.$router.push({path:'/dashboard',query:{category:`${current}`}});
+      this.$nuxt.refresh()
+    }
+  }
 }
 </script>
 

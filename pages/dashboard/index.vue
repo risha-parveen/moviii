@@ -9,8 +9,8 @@
         <Trending/>
       </div>
       <div class="line"></div>
-      <div class="all-container">
-        <AllShows/>
+      <div class="all-container" >
+        <AllShows :category="`${this.all_routes[$route.query]}`"/>
       </div>
     </div>
     <Footer/>
@@ -19,6 +19,16 @@
 
 <script>
 export default {
+  data(){
+    return{
+      all_routes:{
+        movies:'discover/movie',
+        tv:'discover/tv',
+        animation:'discover/movie',
+        trending:'trending/all/week'
+      }
+    }
+  },
 
 }
 </script>
