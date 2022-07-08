@@ -17,9 +17,9 @@ export default {
   async fetch() {
     if(this.$route.query.page) this.page_no=this.$route.query.page
     if(this.$route.query.category) this.current_path=this.all_routes[this.$route.query.category]
-    console.log(this.current_path)
+    
     this.shows = await fetch(`
-    https://api.themoviedb.org/3/${this.current_path}?api_key=0dd92ad96e0c4b9992f976096e327fb2&inwith_watch_monetization_types=flatrate&page=${this.page_no}`
+    https://api.themoviedb.org/3/${this.current_path}?api_key=0dd92ad96e0c4b9992f976096e327fb2&with_genres=horror&inwith_watch_monetization_types=flatrate&page=${this.page_no}`
     ).then((res)=>res.json())
   },
   data(){
@@ -35,6 +35,11 @@ export default {
       },
     }
   },
+  watch:{
+    '$route.query'(){
+      this.$fetch()
+    }
+  }
 }
 </script>
 
