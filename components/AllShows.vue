@@ -1,6 +1,5 @@
 <template>
   <div class="all-shows" >
-    <button @click="clicked">hello</button>
     <p>All Shows</p>
     <div class="show-container">
       <div class="show" v-for="show in this.shows.results" :key="show.id">
@@ -15,38 +14,25 @@
 
 <script>
 export default {
-  props:{
-    category:{
-      type:String,
-      default:'discover/movie'
-    }
-  },
-  watch:{
-    '$route.query':'$fetch'
-  },
   async fetch() {
     if(this.$route.query.page) this.page_no=this.$route.query.page
-    console.log(this.page_no)
+    if(this.$route.query.category) this.current_path=this.all_routes[this.$route.query.category]
+    console.log(this.current_path)
     this.shows = await fetch(`
-    https://api.themoviedb.org/3/${this.category}?api_key=0dd92ad96e0c4b9992f976096e327fb2&inwith_watch_monetization_types=flatrate&page=${this.page_no}`
+    https://api.themoviedb.org/3/${this.current_path}?api_key=0dd92ad96e0c4b9992f976096e327fb2&inwith_watch_monetization_types=flatrate&page=${this.page_no}`
     ).then((res)=>res.json())
   },
   data(){
     return{
       shows:[],
       page_no:'1',
-      current_path:'',
+      current_path:'discover/movie',
       all_routes:{
         movies:'discover/movie',
         tv:'discover/tv',
         animation:'discover/movie',
         trending:'trending/all/week'
       },
-    }
-  },
-  methods:{
-    clicked(){
-      console.log(`https://api.themoviedb.org/3/${this.category}?api_key=0dd92ad96e0c4b9992f976096e327fb2&inwith_watch_monetization_types=flatrate&page=2`)
     }
   },
 }

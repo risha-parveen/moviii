@@ -10,38 +10,15 @@
       </div>
       <div class="line"></div>
       <div class="all-container" >
-        <AllShows :category="current_route"/>
+        <AllShows/> 
       </div>
     </div>
     <Footer/>
-    <button @click="passQuery">hello</button>
   </div>
 </template>
 
 <script>
 export default {
-  data(){
-    return{
-      all_routes:{
-        movies:'discover/movie',
-        tv:'discover/tv',
-        animation:'discover/movie',
-        trending:'trending/all/week'
-      },
-      current_route:'discover/movie'
-    }
-  },
-  methods:{
-    passQuery(){
-      console.log(this.all_routes[this.$route.query.category])
-    }
-  },
-  watch:{
-    '$route.query'(){
-      this.current_route=this.all_routes[this.$route.query.category]
-    }
-  }
-
 }
 </script>
 

@@ -28,6 +28,10 @@ export default {
   methods:{
     categoryClicked(current){
       this.$router.push({path:'/dashboard',query:{category:`${current}`}});
+    }
+  },
+  watch:{
+    '$route.query'(){
       this.$nuxt.refresh()
     }
   }
@@ -45,6 +49,12 @@ export default {
     img{
       margin:20px 30px 0px 60px;
     }
+  }
+
+  .head-container{
+    position:fixed;
+    top:0;
+    width:100%;
   }
 
   .category-container{
